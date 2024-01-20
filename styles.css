@@ -1,0 +1,131 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    margin-top: 20px;
+    padding-top: 70px;
+}
+
+.angpow {
+    width: 300px;
+    height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.triangle-closed,
+.triangle-opened,
+.inner-triangle {
+    width: 0;
+    height: 0;
+}
+
+.triangle-closed,
+.triangle-opened,
+.inner-triangle {
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+}
+
+.triangle-closed {
+    border-top: 125px solid rgb(141, 32, 32);
+    position: absolute;
+    top: 16.2%;
+    transform: translateY(-50%);
+}
+
+.triangle-opened {
+    border-bottom: 125px solid rgb(141, 32, 32);
+    position: absolute;
+    display: none;
+    top: -31.9%;
+}
+
+.inner-triangle {
+    border-top: 125px solid;
+    position: absolute;
+    display: none;
+    top: 0.13%;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.glow {
+    position: absolute;
+    top: 10.9%;
+    border-top: 100px solid rgba(255, 255, 0, 0.5);
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 0;
+    width: 349px;
+    z-index: 1;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .angpow {
+        height: 50vh;
+    }
+
+    .triangle-closed {
+        border-top: 125px solid rgb(141, 32, 32);
+        position: absolute;
+        top: 18.2%;
+        transform: translateY(-50%);
+    }
+
+    .triangle-opened {
+        border-bottom: 125px solid rgb(141, 32, 32);
+        position: absolute;
+        display: none;
+        top: -36.8%;
+    }
+
+    .inner-triangle {
+        border-top: 125px solid;
+        position: absolute;
+        display: none;
+        top: -0.1%;
+    }
+}
+
+@media (max-width: 425.5px) {
+    .wrapper{
+        padding-top: 2.5rem;
+    }
+
+    .angpow {
+        height: 60vh; /* Adjust as needed */
+    }
+
+    .triangle-closed {
+        border-top: 125px solid rgb(141, 32, 32);
+        position: absolute;
+        top: 20.2%;
+        transform: translateY(-50%);
+    }
+
+    .triangle-opened {
+        border-bottom: 125px solid rgb(141, 32, 32);
+        position: absolute;
+        display: none;
+        top: -41.1%;
+    }
+
+    .inner-triangle {
+        border-top: 125px solid;
+        position: absolute;
+        display: none;
+        top: -0.1%;
+    }
+}
