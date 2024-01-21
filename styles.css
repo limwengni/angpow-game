@@ -25,9 +25,70 @@ body {
     margin: 0;
 }
 
+.rain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background-color: transparent;
+    display: none;
+}
+
+.center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* Ensure the center container is above the rain container */
+}
+
 .wrapper {
     margin-top: 20px;
     padding-top: 70px;
+}
+
+.yuanbao {
+    margin-top: -50px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
+    /* animation: slideUpAnimation 0.5s ease-out, shakeAnimation 0.5s ease-in-out infinite; */
+}
+
+@keyframes fallAnimation {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.yuanbao-top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 25px;
+    width: 50px;
+    border-radius: 150px 150px 0 0;
+    background-color: rgb(255, 183, 0);
+}
+
+.yuanbao-bottom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translate(-50%, -50%) rotateX(180deg);
+    height: 50px;
+    width: 100px;
+    border-radius: 30% 30% 10% 10% / 80% 80% 20% 20%;
+    background-color: rgb(255, 183, 0);
 }
 
 .angpow {
@@ -74,18 +135,6 @@ body {
     height: calc(0.125 * var(--width));
     width: var(--width);
     border-radius: 0 0 250px 250px;
-}
-
-.glow {
-    position: absolute;
-    top: 10.9%;
-    border-top: 100px solid rgba(255, 255, 0, 0.5);
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    height: 0;
-    width: 349px;
-    z-index: 1;
-    display: none;
 }
 
 @media (max-width: 768px) {
@@ -162,10 +211,33 @@ body {
 }
 
 @media (min-height: 2000px) {
+    .yuanbao-top {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 50px;
+        width: 100px;
+        border-radius: 150px 150px 0 0;
+        background-color: rgb(255, 183, 0);
+    }
+    
+    .yuanbao-bottom {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: bottom center;
+        transform: translate(-50%, -50%) rotateX(180deg);
+        height: 100px;
+        width: 200px;
+        border-radius: 30% 30% 10% 10% / 80% 80% 20% 20%;
+        background-color: rgb(255, 183, 0);
+    }
+
     .angpow {
         -webkit-tap-highlight-color: transparent;
     }
-    
+
     :root {
         --width: 620px;
         --height: 800px;
