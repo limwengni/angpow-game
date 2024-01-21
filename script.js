@@ -71,12 +71,59 @@ function openAngpow() {
         const innerAngpow = document.querySelector('.inner-angpow');
         const rainContainer = document.getElementById('rain-container');
 
+        // Set the background color based on the random amount
+        let moneyColor;
+        if (randomAmount >= 1 && randomAmount <= 4) {
+            // Blue color
+            moneyColor = '#1cb6d9';
+        } else if (randomAmount >= 5 && randomAmount <= 9) {
+            // Light green color
+            moneyColor = '#5ed91c';
+        } else if (randomAmount >= 10 && randomAmount <= 19) {
+            // Red color
+            moneyColor = '#d61818';
+        } else if (randomAmount >= 20 && randomAmount <= 49) {
+            // Orange color
+            moneyColor = 'orange';
+        } else if (randomAmount >= 50 && randomAmount <= 99) {
+            // Dark green color
+            moneyColor = '#0f6e12';
+        } else if (randomAmount === 100) {
+            // Purple color
+            moneyColor = '#660f6e';
+        }
+
+        const money = document.querySelector('.money');
+
         // Result
         const resultElement = document.getElementById('result');
         if (luckyNumber !== null) {
             resultElement.innerHTML = `You got RM${luckyNumber.toFixed(2)}!!!`;
             innerAngpow.style.backgroundColor = "rgb(255, 183, 0)";
             rainContainer.style.display = "block";
+
+            if (luckyNumber >= 1 && luckyNumber <= 4) {
+                // Blue color
+                moneyColor = '#1cb6d9';
+            } else if (luckyNumber >= 5 && luckyNumber <= 9) {
+                // Light green color
+                moneyColor = '#5ed91c';
+            } else if (luckyNumber >= 10 && luckyNumber <= 19) {
+                // Red color
+                moneyColor = '#d61818';
+            } else if (luckyNumber >= 20 && luckyNumber <= 49) {
+                // Orange color
+                moneyColor = 'orange';
+            } else if (luckyNumber >= 50 && luckyNumber <= 99) {
+                // Dark green color
+                moneyColor = '#0f6e12';
+            } else if (luckyNumber === 100) {
+                // Purple color
+                moneyColor = '#660f6e';
+            }
+
+            money.style.backgroundColor = moneyColor;
+            money.style.display = "block";
 
             angpowElement.style.animation = 'shakeAnimation 0.5s ease-in-out infinite';
             playLuckyNumberMusic(0, 15);
@@ -86,6 +133,9 @@ function openAngpow() {
         } else {
             resultElement.innerHTML = `You got RM${randomAmount.toFixed(2)}!`;
             innerAngpow.style.backgroundColor = "whitesmoke";
+
+            money.style.backgroundColor = moneyColor;
+            money.style.display = "block";
 
             angpowElement.style.animation = 'none';
         }
@@ -113,6 +163,9 @@ function openAngpow() {
     } else {
         stopRain();
         stopLuckyNumberMusic();
+
+        const money = document.querySelector('.money');
+        money.style.display = "none";
 
         const rainContainer = document.getElementById('rain-container');
         rainContainer.style.display = "none";
@@ -145,7 +198,7 @@ let luckyNumberAudio;  // Declare a variable to store the audio element
 
 function playLuckyNumberMusic(startTime, endTime) {
     // Replace 'path/to/lucky_number_music.mp3' with the actual path to your music file
-    const musicPath = 'sounds/lucky_number_music.m4a';
+    const musicPath = 'C:\\Users\\User\\Downloads\\lucky_number_music.m4a';
 
     // Create an audio element
     luckyNumberAudio = new Audio(musicPath);
