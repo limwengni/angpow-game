@@ -1,3 +1,8 @@
+:root {
+    --width: 300px;
+    --height: 390px;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -72,40 +77,14 @@ body {
     display: none;
 }
 
-@media (max-width: 768px) {
-    .angpow {
-        height: 50vh;
-    }
-
-    .triangle-closed {
-        border-top: 125px solid rgb(141, 32, 32);
-        position: absolute;
-        top: 18.2%;
-        transform: translateY(-50%);
-    }
-
-    .triangle-opened {
-        border-bottom: 125px solid rgb(141, 32, 32);
-        position: absolute;
-        display: none;
-        top: -36.8%;
-    }
-
-    .inner-triangle {
-        border-top: 125px solid;
-        position: absolute;
-        display: none;
-        top: -0.1%;
-    }
-}
-
 @media (max-width: 425.5px) {
-    .wrapper{
+    .wrapper {
         padding-top: 2.5rem;
     }
 
     .angpow {
-        height: 60vh; /* Adjust as needed */
+        height: 60vh;
+        /* Adjust as needed */
     }
 
     .triangle-closed {
@@ -132,13 +111,21 @@ body {
 
 @media (min-height: 1000px) {
     .angpow {
-        height: 40vh; /* Adjust as needed */
+        width: calc(1.2 * var(--width));
+        height: calc(1.2 * var(--height));
+    }
+
+    .triangle-closed,
+    .triangle-opened,
+    .inner-triangle {
+        border-left: 180px solid transparent;
+        border-right: 180px solid transparent;
     }
 
     .triangle-closed {
         border-top: 125px solid rgb(141, 32, 32);
         position: absolute;
-        top: 15.9%;
+        top: 13.4%;
         transform: translateY(-50%);
     }
 
@@ -146,20 +133,28 @@ body {
         border-bottom: 125px solid rgb(141, 32, 32);
         position: absolute;
         display: none;
-        top: -31.37%;
+        top: -26.6%;
     }
-    
+
 }
 
 @media (min-height: 2000px) {
     .angpow {
-        height: 35vh; /* Adjust as needed */
+        width: calc(2 * var(--width));
+        height: calc(2 * var(--height));
+    }
+
+    .triangle-closed,
+    .triangle-opened,
+    .inner-triangle {
+        border-left: 300px solid transparent;
+        border-right: 300px solid transparent;
     }
 
     .triangle-closed {
         border-top: 125px solid rgb(141, 32, 32);
         position: absolute;
-        top: 7.5%;
+        top: 8.1%;
         transform: translateY(-50%);
     }
 
@@ -167,7 +162,14 @@ body {
         border-bottom: 125px solid rgb(141, 32, 32);
         position: absolute;
         display: none;
-        top: -14.7%;
+        top: -15.95%;
     }
-    
+
+    .text-lg {
+        font-size: 1.875rem !important;
+        /* 30px */
+        line-height: 2.25rem !important;
+        /* 36px */
+    }
+
 }
