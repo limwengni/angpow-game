@@ -11,35 +11,35 @@ function openAngpow() {
         const includeLuckyNumber = Math.random() < 0.1;
         const luckyNumber = includeLuckyNumber ? luckyNumbers[Math.floor(Math.random() * luckyNumbers.length)] : null;
 
-        // Init angpow and inner triangle
+        // Init angpow and inner angpow
         const angpowElement = document.querySelector('.angpow');
-        const innerTriangle = document.querySelector('.inner-triangle');
+        const innerAngpow = document.querySelector('.inner-angpow');
         //const glow = document.querySelector('.glow');
 
         // Result
         const resultElement = document.getElementById('result');
         if (luckyNumber !== null) {
             resultElement.innerHTML = `You got RM${luckyNumber.toFixed(2)}!!!`;
-            innerTriangle.style.borderTopColor = "rgb(255, 183, 0)";
+            innerAngpow.style.backgroundColor = "rgb(255, 183, 0)";
             //glow.style.display = "block";
         } else {
             resultElement.innerHTML = `You got RM${randomAmount.toFixed(2)}!`;
-            innerTriangle.style.borderTopColor = "rgb(112, 33, 33)";
+            innerAngpow.style.backgroundColor = "whitesmoke";
         }
 
         // Disable further clicks on the angpow
         angpowElement.onclick = null;
         angpowElement.style.cursor = 'default';
 
-        // Hide closed triangle
-        const closedTriangle = document.querySelector('.triangle-closed');
-        closedTriangle.style.display = "none";
+        // Hide closed angpow
+        const closedAngpow = document.querySelector('.angpow-closed');
+        closedAngpow.style.display = "none";
 
-        // Show opened triangle and inner triangle
-        const openedTriangle = document.querySelector('.triangle-opened');
-        openedTriangle.style.display = "block";
+        // Show opened angpow and inner angpow
+        const openedAngpow = document.querySelector('.angpow-opened');
+        openedAngpow.style.display = "block";
 
-        innerTriangle.style.display = "block";
+        innerAngpow.style.display = "block";
 
         // Set click event for result element
         resultElement.onclick = null;
@@ -52,15 +52,15 @@ function openAngpow() {
         const resultElement = document.getElementById('result');
         resultElement.innerHTML = 'Click to open Angpow!';
 
-        // Show closed triangle
-        const closedTriangle = document.querySelector('.triangle-closed');
-        closedTriangle.style.display = "block";
+        // Show closed angpow
+        const closedAngpow = document.querySelector('.angpow-closed');
+        closedAngpow.style.display = "block";
 
-        // Hide opened triangle and inner triangle
-        const openedTriangle = document.querySelector('.triangle-opened');
-        const innerTriangle = document.querySelector('.inner-triangle');
-        openedTriangle.style.display = "none";
-        innerTriangle.style.display = "none";
+        // Hide opened angpow and inner angpow
+        const openedAngpow = document.querySelector('.angpow-opened');
+        const innerAngpow = document.querySelector('.inner-angpow');
+        openedAngpow.style.display = "none";
+        innerAngpow.style.display = "none";
 
         // Enable further clicks on the angpow
         angpowElement.style.cursor = 'pointer';
