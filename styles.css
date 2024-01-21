@@ -69,12 +69,26 @@ body {
 }
 
 @keyframes shakeAnimation {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px) rotate(5deg); }
-    50% { transform: translateX(5px) rotate(-5deg); }
-    75% { transform: translateX(-5px) rotate(5deg); }
-    100% { transform: translateX(0) rotate(0); }
-  }
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px) rotate(5deg);
+    }
+
+    50% {
+        transform: translateX(5px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translateX(-5px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(0);
+    }
+}
 
 .yuanbao-top {
     position: absolute;
@@ -119,6 +133,16 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     background-color: rgb(141, 32, 32);
+}
+
+.money {
+    position: absolute;
+    display: none;
+    top: -30.1%;
+    height: 118px;
+    width: 160px;
+    background-color: #555;
+    z-index: 1;
 }
 
 .angpow-opened {
@@ -204,6 +228,16 @@ body {
         padding-top: 0;
     }
 
+    .money {
+        position: absolute;
+        display: none;
+        top: -30.1%;
+        height: 120.2px;
+        width: 160px;
+        background-color: #555;
+        z-index: 1;
+    }
+
     .angpow {
         width: var(--width);
         height: var(--height);
@@ -229,7 +263,7 @@ body {
         border-radius: 150px 150px 0 0;
         background-color: rgb(255, 183, 0);
     }
-    
+
     .yuanbao-bottom {
         position: absolute;
         top: 50%;
@@ -254,6 +288,16 @@ body {
     .wrapper {
         margin: 0;
         padding-top: 0;
+    }
+
+    .money {
+        position: absolute;
+        display: none;
+        top: -30.1%;
+        height: 241.2px;
+        width: 360px;
+        background-color: #555;
+        z-index: 1;
     }
 
     .angpow {
