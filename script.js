@@ -198,7 +198,7 @@ let luckyNumberAudio;  // Declare a variable to store the audio element
 
 function playLuckyNumberMusic(startTime, endTime) {
     // Replace 'path/to/lucky_number_music.mp3' with the actual path to your music file
-    const musicPath = 'C:\\Users\\User\\Downloads\\lucky_number_music.m4a';
+    const musicPath = 'sounds/lucky_number_music.m4a';
 
     // Create an audio element
     luckyNumberAudio = new Audio(musicPath);
