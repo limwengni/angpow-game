@@ -139,7 +139,7 @@ body {
     position: absolute;
     display: none;
     top: -30.1%;
-    height: 118px;
+    height: 158px;
     width: 160px;
     background-color: #555;
     z-index: 1;
@@ -232,7 +232,7 @@ body {
         position: absolute;
         display: none;
         top: -30.1%;
-        height: 120.2px;
+        height: 160.2px;
         width: 160px;
         background-color: #555;
         z-index: 1;
@@ -294,7 +294,7 @@ body {
         position: absolute;
         display: none;
         top: -30.1%;
-        height: 241.2px;
+        height: 320.2px;
         width: 360px;
         background-color: #555;
         z-index: 1;
