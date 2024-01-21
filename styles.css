@@ -129,3 +129,45 @@ body {
         top: -0.1%;
     }
 }
+
+@media (min-height: 1000px) {
+    .angpow {
+        height: 40vh; /* Adjust as needed */
+    }
+
+    .triangle-closed {
+        border-top: 125px solid rgb(141, 32, 32);
+        position: absolute;
+        top: 15.9%;
+        transform: translateY(-50%);
+    }
+
+    .triangle-opened {
+        border-bottom: 125px solid rgb(141, 32, 32);
+        position: absolute;
+        display: none;
+        top: -31.37%;
+    }
+    
+}
+
+@media (min-height: 2000px) {
+    .angpow {
+        height: 35vh; /* Adjust as needed */
+    }
+
+    .triangle-closed {
+        border-top: 125px solid rgb(141, 32, 32);
+        position: absolute;
+        top: 7.5%;
+        transform: translateY(-50%);
+    }
+
+    .triangle-opened {
+        border-bottom: 125px solid rgb(141, 32, 32);
+        position: absolute;
+        display: none;
+        top: -14.7%;
+    }
+    
+}
