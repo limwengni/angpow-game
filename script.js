@@ -61,10 +61,10 @@ function openAngpow() {
     if (angpowElementStatus === "closed") {
         const randomAmount = Math.floor(Math.random() * 100) + 1;
 
-        const luckyNumbers = [0.88, 8.88, 88.88];
+        const luckyNumbers = [0.88, 8.88, 16.88, 18.88, 26.88, 28.88, 66.88, 68.88, 88.88];
 
-        // Randomly choose a lucky number with a 10% chance
-        const includeLuckyNumber = Math.random() < 0.1;
+        // Randomly choose a lucky number with a 20% chance
+        const includeLuckyNumber = Math.random() < 0.2;
         const luckyNumber = includeLuckyNumber ? luckyNumbers[Math.floor(Math.random() * luckyNumbers.length)] : null;
 
         // Init angpow and inner angpow
@@ -78,11 +78,16 @@ function openAngpow() {
             innerAngpow.style.backgroundColor = "rgb(255, 183, 0)";
             rainContainer.style.display = "block";
 
+            angpowElement.style.animation = 'shakeAnimation 0.5s ease-in-out infinite';
+            playLuckyNumberMusic(0, 15);
+
             startRain();
 
         } else {
             resultElement.innerHTML = `You got RM${randomAmount.toFixed(2)}!`;
             innerAngpow.style.backgroundColor = "whitesmoke";
+
+            angpowElement.style.animation = 'none';
         }
 
         // Disable further clicks on the angpow
@@ -107,9 +112,12 @@ function openAngpow() {
 
     } else {
         stopRain();
+        stopLuckyNumberMusic();
 
         const rainContainer = document.getElementById('rain-container');
         rainContainer.style.display = "none";
+
+        angpowElement.style.animation = 'none';
 
         // Reset the result text
         const resultElement = document.getElementById('result');
@@ -130,6 +138,40 @@ function openAngpow() {
 
         // Set angpow is closed back
         angpowElementStatus = "closed";
+    }
+}
+
+let luckyNumberAudio;  // Declare a variable to store the audio element
+
+function playLuckyNumberMusic(startTime, endTime) {
+    // Replace 'path/to/lucky_number_music.mp3' with the actual path to your music file
+    const musicPath = 'sounds/lucky_number_music.m4a';
+
+    // Create an audio element
+    luckyNumberAudio = new Audio(musicPath);
+
+    // Set the starting time
+    luckyNumberAudio.currentTime = startTime;
+
+    // Play the audio
+    luckyNumberAudio.play();
+
+    // Stop the audio at the specified end time
+    luckyNumberAudio.addEventListener('timeupdate', function handleTimeUpdate() {
+        if (luckyNumberAudio.currentTime >= endTime) {
+            // Pause the audio
+            luckyNumberAudio.pause();
+
+            // Remove the event listener to prevent memory leaks
+            luckyNumberAudio.removeEventListener('timeupdate', handleTimeUpdate);
+        }
+    });
+}
+
+function stopLuckyNumberMusic() {
+    if (luckyNumberAudio) {
+        // Pause the audio
+        luckyNumberAudio.pause();
     }
 }
 
