@@ -17,52 +17,49 @@ body {
 }
 
 .angpow {
-    width: 300px;
-    height: 390px;
+    width: var(--width);
+    height: var(--height);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
 
-.triangle-closed,
-.triangle-opened,
-.inner-triangle {
-    width: 0;
-    height: 0;
-}
-
-.triangle-closed,
-.triangle-opened,
-.inner-triangle {
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-}
-
-.triangle-closed {
-    border-top: 125px solid rgb(141, 32, 32);
+.angpow-closed {
     position: absolute;
-    top: 16.2%;
-    transform: translateY(-50%);
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: calc(0.4 * var(--width));
+    width: var(--width);
+    border-radius: 50% / 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: rgb(141, 32, 32);
 }
 
-.triangle-opened {
-    border-bottom: 125px solid rgb(141, 32, 32);
+.angpow-opened {
     position: absolute;
     display: none;
-    top: -31.9%;
+    top: -15.1%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(180deg);
+    height: calc(0.4 * var(--width));
+    width: var(--width);
+    border-radius: 50% / 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: rgb(141, 32, 32);
 }
 
-.inner-triangle {
-    border-top: 125px solid;
+.inner-angpow {
     position: absolute;
-    display: none;
-    top: 0.13%;
-}
-
-.result {
-    margin-top: 20px;
-    font-size: 18px;
+    top: 4.9%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: calc(0.125 * var(--width));
+    width: var(--width);
+    border-radius: 0 0 250px 250px;
 }
 
 .glow {
@@ -77,99 +74,87 @@ body {
     display: none;
 }
 
-@media (max-width: 425.5px) {
+@media (max-width: 768px) {
+    :root {
+        --width: 304.8px;
+        /*increase by 101.6%*/
+        --height: 396.24px;
+    }
+
     .wrapper {
-        padding-top: 2.5rem;
+        margin-top: 0;
+        padding-top: 0;
     }
 
     .angpow {
-        height: 60vh;
-        /* Adjust as needed */
+        width: var(--width);
+        height: var(--height);
     }
 
-    .triangle-closed {
-        border-top: 125px solid rgb(141, 32, 32);
-        position: absolute;
-        top: 20.2%;
-        transform: translateY(-50%);
+}
+
+@media (max-width: 425.5px) {
+    :root {
+        --width: 225px;
+        --height: 292.5px;
     }
 
-    .triangle-opened {
-        border-bottom: 125px solid rgb(141, 32, 32);
-        position: absolute;
-        display: none;
-        top: -41.1%;
+    .wrapper {
+        margin: 0;
+        padding-top: 0;
     }
 
-    .inner-triangle {
-        border-top: 125px solid;
-        position: absolute;
-        display: none;
-        top: -0.1%;
+    .angpow {
+        width: var(--width);
+        height: var(--height);
     }
 }
 
 @media (min-height: 1000px) {
+    :root {
+        --width: 310px;
+        --height: 400px;
+    }
+
+    .wrapper {
+        margin: 0;
+        padding-top: 0;
+    }
+
     .angpow {
-        width: calc(1.2 * var(--width));
-        height: calc(1.2 * var(--height));
+        width: var(--width);
+        height: var(--height);
     }
 
-    .triangle-closed,
-    .triangle-opened,
-    .inner-triangle {
-        border-left: 180px solid transparent;
-        border-right: 180px solid transparent;
-    }
-
-    .triangle-closed {
-        border-top: 125px solid rgb(141, 32, 32);
-        position: absolute;
-        top: 13.4%;
-        transform: translateY(-50%);
-    }
-
-    .triangle-opened {
-        border-bottom: 125px solid rgb(141, 32, 32);
-        position: absolute;
-        display: none;
-        top: -26.6%;
+    .text-lg {
+        font-size: 1.5rem !important;
+        /* 24px */
+        line-height: 2rem !important;
+        /* 32px */
     }
 
 }
 
 @media (min-height: 2000px) {
+    :root {
+        --width: 620px;
+        --height: 800px;
+    }
+
+    .wrapper {
+        margin: 0;
+        padding-top: 0;
+    }
+
     .angpow {
-        width: calc(2 * var(--width));
-        height: calc(2 * var(--height));
-    }
-
-    .triangle-closed,
-    .triangle-opened,
-    .inner-triangle {
-        border-left: 300px solid transparent;
-        border-right: 300px solid transparent;
-    }
-
-    .triangle-closed {
-        border-top: 125px solid rgb(141, 32, 32);
-        position: absolute;
-        top: 8.1%;
-        transform: translateY(-50%);
-    }
-
-    .triangle-opened {
-        border-bottom: 125px solid rgb(141, 32, 32);
-        position: absolute;
-        display: none;
-        top: -15.95%;
+        width: var(--width);
+        height: var(--height);
     }
 
     .text-lg {
-        font-size: 1.875rem !important;
-        /* 30px */
-        line-height: 2.25rem !important;
-        /* 36px */
+        font-size: 3rem !important;
+        /* 48px */
+        line-height: 1rem !important;
     }
 
 }
