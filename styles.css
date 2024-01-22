@@ -135,16 +135,6 @@ body {
     background-color: rgb(141, 32, 32);
 }
 
-.money {
-    position: absolute;
-    display: none;
-    top: -30.1%;
-    height: 156px;
-    width: 160px;
-    background-color: #555;
-    z-index: 1;
-}
-
 .angpow-opened {
     position: absolute;
     display: none;
@@ -228,16 +218,6 @@ body {
         padding-top: 0;
     }
 
-    .money {
-        position: absolute;
-        display: none;
-        top: -30.1%;
-        height: 160.2px;
-        width: 160px;
-        background-color: #555;
-        z-index: 1;
-    }
-
     .angpow {
         width: var(--width);
         height: var(--height);
@@ -288,16 +268,6 @@ body {
     .wrapper {
         margin: 0;
         padding-top: 0;
-    }
-
-    .money {
-        position: absolute;
-        display: none;
-        top: -30.1%;
-        height: 320.2px;
-        width: 360px;
-        background-color: #555;
-        z-index: 1;
     }
 
     .angpow {
